@@ -5,7 +5,6 @@
 - Active internet connection to fetch live weather and reverse-geocode data  
 - A valid **OpenWeatherMap API key** (replace the key inside `script.js`)  
 - Basic understanding of HTML and JavaScript for customization or extension  
-- (Optional) A local static server for smoother testing and to avoid CORS issues when opening files via `file://`  
 
 **Technologies Used**
 - **HTML** for the user interface structure (inputs, buttons, display elements)  
