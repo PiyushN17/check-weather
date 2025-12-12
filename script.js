@@ -72,7 +72,7 @@ detect.addEventListener('click', function() {
   },
   (e) => {
     if(e.code === e.PERMISSION_DENIED) {
-      err.innerText = 'User denied permission';
+      err.innerText = 'User Denied Permission';
     }
     else if(e.code === e.POSITION_UNAVAILABLE) {
       err.innerText = 'Position Unavailable';
@@ -111,3 +111,4 @@ async function callAPIAgain(cityNameAgain) {
     pressureAndWind.innerText = `Pressure: ${response.main.pressure}mb | Wind Speed: ${response.wind.speed}KM/H`;
   }
 }
+
