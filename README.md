@@ -1,4 +1,4 @@
-# City Weather Lookup Widget – README
+# Check City Weather – README
 
 **Requirements**
 - A modern web browser (Chrome, Firefox, Edge, Safari)  
