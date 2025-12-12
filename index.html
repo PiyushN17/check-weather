@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="text" id="city">
+    <h1>Check Weather</h1>
+    <input type="text" id="city" placeholder="Enter City Name">
     <button id="search">Get Weather</button>
     <p id="err"></p>
-    <div id="container">
+    <div id="container" hidden>
         <p id="cityName"></p>
-        <p id="countryName"></p>
+        <p id="dateAndDay"></p>
         <p id="temp"></p>
-        <p id="wind"></p>
+        <div id="sameLine">
+            <p id="weatherDescription"></p>
+            <img src="#" id="icon" width="10%" hidden>
+        </div>
+        <p id="minAndMax"></p>
+        <p id="updation"></p>
+        <hr>
+        <p id="feelsAndHumidity"></p>
+        <p id="pressureAndWind"></p>
     </div>
     <script src="script.js"></script>
 </body>
