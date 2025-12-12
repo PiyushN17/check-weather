@@ -34,6 +34,21 @@ h1 {
     background-color: #3c67b5;
 }
 
+#detect {
+    padding: 10px 18px;
+    margin-top: 10px;
+    background-color: white;
+    color: #4d7bd1;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#detect:hover {
+    background-color: rgb(224, 224, 224);
+}
+
 #err {
     color: red;
     margin-top: 10px;
