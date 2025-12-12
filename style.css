@@ -1,68 +1,105 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #f2f2f2;
+    font-family: Arial, sans-serif;
+    background-color: #e8f0ff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #2a4d8f;
+    margin-bottom: 20px;
 }
 
 #city {
-  width: 90%;
-  max-width: 400px;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-  box-sizing: border-box;
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #7a9cd6;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
 #search {
-  margin-top: 10px;
-  padding: 12px 20px;
-  font-size: 16px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 90%;
-  max-width: 400px;
+    padding: 10px 18px;
+    margin-top: 10px;
+    background-color: #4d7bd1;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-#search:active {
-  transform: scale(0.98);
+#search:hover {
+    background-color: #3c67b5;
 }
 
 #err {
-  margin-top: 10px;
-  color: red;
-  font-size: 14px;
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 #container {
-  margin-top: 20px;
-  width: 90%;
-  max-width: 450px;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 25px auto;
+    padding: 15px;
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 360px;
+    border-radius: 6px;
+    border: 1px solid #c7d4ec;
 }
 
-#container p {
-  font-size: 18px;
-  margin: 8px 0;
-  word-break: break-word;
+#cityName {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2a4d8f;
 }
 
-@media (min-width: 600px) {
-  #city, #search {
-    width: 60%;
-  }
-  #container {
-    width: 60%;
-  }
+#dateAndDay {
+   color: #555;
+   margin-bottom: 10px;
+}
+
+#temp {
+    font-size: 50px;
+    color: #2a4d8f;
+    margin: 10px 0;
+}
+
+#sameLine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#weatherDescription {
+    font-size: 18px;
+    color: #333;
+}
+
+#icon {
+    width: 50px;
+}
+
+#minAndMax,
+#updation,
+#feelsAndHumidity,
+#pressureAndWind {
+    margin: 8px 0;
+    color: #444;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #d2d8e6;
+    margin: 15px 0;
+}
+
+@media (max-width: 400px) {
+    #temp {
+        font-size: 32px;
+    }
 }
