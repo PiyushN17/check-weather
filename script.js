@@ -12,6 +12,7 @@ let updation = document.getElementById('updation');
 let feelsAndHumidity = document.getElementById('feelsAndHumidity');
 let pressureAndWind = document.getElementById('pressureAndWind');
 let detect = document.getElementById('detect');
+let loader = document.getElementById('loader');
 
 let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 let day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']; 
@@ -23,12 +24,15 @@ async function callAPI(value) {
   let output = await fetch(API_URL);
   let response = await output.json();
   if(response.message) {
+    loader.hidden = true;
+    container.hidden = true;
     err.innerText = 'City Not Found!'
   }
   else {
     err.innerText = '';
     let iconCode = response.weather[0].icon;
     let ICON_URL = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    loader.hidden = true;
     container.hidden = false;
     icon.hidden = false;
     cityName.innerText = `${response.name}, ${response.sys.country}`;
@@ -44,16 +48,20 @@ async function callAPI(value) {
 }
 
 search.addEventListener('click', function() {
+  loader.hidden = false;
   if(city.value === '') {
+    loader.hidden = true;
     err.innerText = 'Please enter a city name!';
   }
   else {
     err.innerText = '';
+    loader.hidden = false;
     callAPI(city.value);
   }
 });
 
 async function getCityName(lat, lng) {
+  loader.hidden = false;
   let API_URL2 = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`;
   let output = await fetch(API_URL2);
   let resp = await output.json();
@@ -62,7 +70,9 @@ async function getCityName(lat, lng) {
 }
 
 detect.addEventListener('click', function() {
+  loader.hidden = false;
   if(!navigator.geolocation) {
+    loader.hidden = true;
     err.innerText = 'Geolocation not supported';
     return;
   }
@@ -71,6 +81,7 @@ detect.addEventListener('click', function() {
     getCityName(pos.coords.latitude, pos.coords.longitude);
   },
   (e) => {
+    loader.hidden = true;
     if(e.code === e.PERMISSION_DENIED) {
       err.innerText = 'User denied permission';
     }
